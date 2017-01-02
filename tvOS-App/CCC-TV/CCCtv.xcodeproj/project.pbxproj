@@ -78,7 +78,6 @@
 		01017D161C1F37FF007CB351 /* ConferencesExport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConferencesExport.swift; path = Exports/ConferencesExport.swift; sourceTree = "<group>"; };
 		01017D181C1F3ECE007CB351 /* LogExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogExporter.swift; path = Exports/LogExporter.swift; sourceTree = "<group>"; };
 		010A4AF61C246B25007CB351 /* CCCtv (Production).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCCtv (Production).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		010A4AF71C246B25007CB351 /* CCCtv copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CCCtv copy-Info.plist"; path = "/Users/kris/Projects/ausdertechnik.de/Applications/Public/CCC-TV/tvOS-App/CCC-TV/CCCtv copy-Info.plist"; sourceTree = "<absolute>"; };
 		010BAB5A1BCC7032007CB351 /* CCCtv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCCtv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		010BAB5D1BCC7032007CB351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; };
 		010BAB621BCC7032007CB351 /* CCC_TV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CCC_TV.xcdatamodel; sourceTree = "<group>"; };
@@ -148,7 +147,6 @@
 				613466F04B15507ED9F84B8D /* Pods */,
 				780357042C6BA944CACAAF59 /* Frameworks */,
 				01733F4C1C1A1425007CB351 /* CCC-TV-Tests */,
-				010A4AF71C246B25007CB351 /* CCCtv copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -742,7 +740,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ausdertechnik.CCC-TV-Tests";
 				PRODUCT_NAME = CCCtv;
-				SDKROOT = appletvos9.1;
+				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCtv (Production).app/CCCtv (Production)";
 			};
 			name = Debug;
@@ -758,7 +756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ausdertechnik.CCC-TV-Tests";
 				PRODUCT_NAME = CCCtv;
-				SDKROOT = appletvos9.1;
+				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCtv (Production).app/CCCtv (Production)";
 			};
 			name = Release;
