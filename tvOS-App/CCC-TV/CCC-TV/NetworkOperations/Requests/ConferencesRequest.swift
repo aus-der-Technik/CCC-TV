@@ -23,7 +23,7 @@ class ConferencesRequest: Requestable {
             if self._json != nil {
                 return _json!
             }
-            return JSON(data: "{}".dataUsingEncoding(NSUTF8StringEncoding)!)
+            return JSON(data: "{}".data(using: String.Encoding.utf8)!)
         }
         set(newJson) {
             self._json = newJson

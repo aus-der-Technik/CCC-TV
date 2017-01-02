@@ -65,6 +65,13 @@
 			remoteGlobalIDString = 010BAB591BCC7032007CB351;
 			remoteInfo = "CCC-TV";
 		};
+		DB0390611E1B1EE000C03197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010BAB521BCC7032007CB351 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010A4ADC1C246B25007CB351;
+			remoteInfo = "CCCtv (Production)";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +103,7 @@
 		01B5D8F71BD66CF5007CB351 /* SettingsExport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsExport.swift; path = Exports/SettingsExport.swift; sourceTree = "<group>"; };
 		0EABE87323B5EF6162983383 /* Pods_CCCtv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCCtv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1778DAFC999F1ED12F119386 /* Pods-CCCtv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCtv.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CCCtv/Pods-CCCtv.release.xcconfig"; sourceTree = "<group>"; };
+		1780066D4B2E2DDD6165CF14 /* Pods_CCCtv__Production_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCCtv__Production_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB5CABC2D9301F2CE977FC8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC4D1C2EF77D5B2D30A540A /* Pods-CCCtv-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCtv-Tests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CCCtv-Tests/Pods-CCCtv-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B20274B6B2E446B30B7A1DF /* Pods-CCCtv-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCtv-Tests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CCCtv-Tests/Pods-CCCtv-Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,6 +280,7 @@
 				1BB5CABC2D9301F2CE977FC8 /* Pods.framework */,
 				0EABE87323B5EF6162983383 /* Pods_CCCtv.framework */,
 				F6D41729F2960DF86260B1CD /* Pods_CCCtv_Tests.framework */,
+				1780066D4B2E2DDD6165CF14 /* Pods_CCCtv__Production_.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -300,12 +309,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 010BAB6C1BCC7032007CB351 /* Build configuration list for PBXNativeTarget "CCCtv" */;
 			buildPhases = (
-				50D34DF87BC395FAB0FC83BA /* Check Pods Manifest.lock */,
+				50D34DF87BC395FAB0FC83BA /* [CP] Check Pods Manifest.lock */,
 				010BAB561BCC7032007CB351 /* Sources */,
 				010BAB571BCC7032007CB351 /* Frameworks */,
 				010BAB581BCC7032007CB351 /* Resources */,
-				7C1808733CFB9E8A28E8C0F8 /* Embed Pods Frameworks */,
-				9F157C46DD90BECD61199FE0 /* Copy Pods Resources */,
+				7C1808733CFB9E8A28E8C0F8 /* [CP] Embed Pods Frameworks */,
+				9F157C46DD90BECD61199FE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,17 +329,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01733F521C1A1425007CB351 /* Build configuration list for PBXNativeTarget "CCCtv-Tests" */;
 			buildPhases = (
-				77DF81C9B2E4DB0EBF76D62F /* Check Pods Manifest.lock */,
+				77DF81C9B2E4DB0EBF76D62F /* [CP] Check Pods Manifest.lock */,
 				01733F471C1A1425007CB351 /* Sources */,
 				01733F481C1A1425007CB351 /* Frameworks */,
 				01733F491C1A1425007CB351 /* Resources */,
-				159DF6E048F506A72B803248 /* Embed Pods Frameworks */,
-				45405337AD7A252101B9F755 /* Copy Pods Resources */,
+				159DF6E048F506A72B803248 /* [CP] Embed Pods Frameworks */,
+				45405337AD7A252101B9F755 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				01733F541C1A1523007CB351 /* PBXTargetDependency */,
+				DB0390621E1B1EE000C03197 /* PBXTargetDependency */,
 			);
 			name = "CCCtv-Tests";
 			productName = "CCC-TV-Tests";
@@ -353,7 +363,7 @@
 					};
 					01733F4A1C1A1425007CB351 = {
 						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 010BAB591BCC7032007CB351;
+						TestTargetID = 010A4ADC1C246B25007CB351;
 					};
 				};
 			};
@@ -404,14 +414,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		159DF6E048F506A72B803248 /* Embed Pods Frameworks */ = {
+		159DF6E048F506A72B803248 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,14 +429,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CCCtv-Tests/Pods-CCCtv-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		45405337AD7A252101B9F755 /* Copy Pods Resources */ = {
+		45405337AD7A252101B9F755 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,44 +444,44 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CCCtv-Tests/Pods-CCCtv-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50D34DF87BC395FAB0FC83BA /* Check Pods Manifest.lock */ = {
+		50D34DF87BC395FAB0FC83BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		77DF81C9B2E4DB0EBF76D62F /* Check Pods Manifest.lock */ = {
+		77DF81C9B2E4DB0EBF76D62F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7C1808733CFB9E8A28E8C0F8 /* Embed Pods Frameworks */ = {
+		7C1808733CFB9E8A28E8C0F8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,14 +489,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CCCtv/Pods-CCCtv-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F157C46DD90BECD61199FE0 /* Copy Pods Resources */ = {
+		9F157C46DD90BECD61199FE0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +577,11 @@
 			isa = PBXTargetDependency;
 			target = 010BAB591BCC7032007CB351 /* CCCtv */;
 			targetProxy = 01733F531C1A1523007CB351 /* PBXContainerItemProxy */;
+		};
+		DB0390621E1B1EE000C03197 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 010A4ADC1C246B25007CB351 /* CCCtv (Production) */;
+			targetProxy = DB0390611E1B1EE000C03197 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -694,6 +709,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ausdertechnik.CCC-TV";
 				PRODUCT_NAME = CCCtv;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
@@ -710,6 +726,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ausdertechnik.CCC-TV";
 				PRODUCT_NAME = CCCtv;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
@@ -726,7 +743,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ausdertechnik.CCC-TV-Tests";
 				PRODUCT_NAME = CCCtv;
 				SDKROOT = appletvos9.1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCtv.app/CCCtv";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCtv (Production).app/CCCtv (Production)";
 			};
 			name = Debug;
 		};
@@ -742,7 +759,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ausdertechnik.CCC-TV-Tests";
 				PRODUCT_NAME = CCCtv;
 				SDKROOT = appletvos9.1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCtv.app/CCCtv";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCtv (Production).app/CCCtv (Production)";
 			};
 			name = Release;
 		};

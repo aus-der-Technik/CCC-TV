@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 import TVMLKit
 
-let build = NSBundle.mainBundle().infoDictionary?.indexForKey(kCFBundleVersionKey as String)
-let version = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"]?.description)! as String
+let build = Bundle.main.infoDictionary?.index(forKey: kCFBundleVersionKey as String)
+let version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"]?.description)! as String
 
 var globalJsContext: JSContext?
 
@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     //static let TVBaseURL = "http://localhost:9001"
     static var TVBaseURL: String  {
         get {
-            let version = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"]?.description)! as String
-            let environment: Dictionary = NSProcessInfo.processInfo().environment
+            let version = (Bundle.mainBundle().infoDictionary?["CFBundleShortVersionString"]?.description)! as String
+            let environment: Dictionary = ProcessInfo.processInfo().environment
             if let serverenvironment = environment["server-environment"] {
                 NSLog("Server environment \(serverenvironment).")
                 switch serverenvironment {
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         print("Build: \(build) Versin: \(version)")
         print("URL: \(AppDelegate.TVBaseURL)")
         
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
         the user quickly.
         */
         if let javaScriptURL = NSURL(string: AppDelegate.TVBootURL) {
-            appControllerContext.javaScriptApplicationURL = javaScriptURL
+            appControllerContext.javaScriptApplicationURL = javaScriptURL as URL
         }
         
         appControllerContext.launchOptions["BASEURL"] = AppDelegate.TVBaseURL
@@ -102,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     }
     
     func appController(appController: TVApplicationController, didFailWithError error: NSError) {
-        print("\(__FUNCTION__) invoked with error: \(error)")
+        print("\(#function) invoked with error: \(error)")
         
         let title = "Error Launching Application"
         let message = error.localizedDescription

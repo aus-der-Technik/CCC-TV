@@ -8,7 +8,7 @@
 
 import Foundation
 
-var downloadQueue = NSOperationQueue()
+var downloadQueue = OperationQueue()
 
 class Downloader {
     

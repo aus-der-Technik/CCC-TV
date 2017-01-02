@@ -27,21 +27,21 @@ protocol Requestable {
 
 extension Requestable {
     
-    mutating func performRequest(completionHandler: (RequestError?, JSON?)->()) {
+    mutating func performRequest(completionHandler: @escaping (RequestError?, JSON?)->()) {
         let url = NSURL(string: "\(apiUrl)\(requestUrl)")
         
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let configuration = URLSessionConfiguration.default
         
-        let request = NSURLRequest(URL: url!)
+        let request = URLRequest(url: url! as URL)
         
-        let session = NSURLSession(
+        let session = URLSession(
             configuration: configuration
             , delegate: SessionDelegate()
-            , delegateQueue: NSOperationQueue.mainQueue()
+            , delegateQueue: OperationQueue.main
         )
         
-        let task = session.dataTaskWithRequest(request){
-            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        let task = session.dataTask(with: request) {
+            (data: NSData?, response: URLResponse?, error: NSError?) -> Void in
             
             if error != nil {
                 NSLog(error!.localizedDescription)
@@ -62,9 +62,9 @@ extension Requestable {
     
 }
 
-class SessionDelegate: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+class SessionDelegate: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+    func URLSession(session: URLSession, task: NSURLSessionTask, didReceiveChallenge challenge: URLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
         if let trust = challenge.protectionSpace.serverTrust {
             completionHandler(
                 NSURLSessionAuthChallengeDisposition.UseCredential
@@ -75,7 +75,7 @@ class SessionDelegate: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate 
         }
     }
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+    func URLSession(session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
         let newRequest : NSURLRequest? = request
         completionHandler(newRequest)
     }

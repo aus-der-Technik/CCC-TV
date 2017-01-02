@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class DownloadConferencesOperation: NSOperation {
+class DownloadConferencesOperation: Operation {
 
     private var _finished: Bool = false {
         willSet {
@@ -19,13 +19,13 @@ class DownloadConferencesOperation: NSOperation {
             self.didChangeValueForKey("isFinished");
         }
     }
-    override var finished: Bool {
+    override var isFinished: Bool {
         get {
             return _finished
         }
     }
     
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     
     override init(){
         dateFormatter.dateFormat = "yyyy-MM-dd'T'kk:mm:ss.SSSxxxxx"
@@ -47,7 +47,7 @@ class DownloadConferencesOperation: NSOperation {
                           title: subJson["title"].stringValue
                         , acronym: subJson["acronym"].stringValue
                         , logo_url: NSURL(string: subJson["logo_url"].stringValue)!
-                        , updated_at: self.dateFormatter.dateFromString(subJson["updated_at"].stringValue)!
+                        , updated_at: self.dateFormatter.dateFromString(subJson["updated_at"].stringValue)! as NSDate
                         , aspect_ratio: subJson["aspect_ratio"].stringValue
                         , schedule_url: NSURL(string: subJson["schedule_url"].stringValue)!
                         , images_url: NSURL(string: subJson["images_url"].stringValue)!
@@ -59,7 +59,7 @@ class DownloadConferencesOperation: NSOperation {
                     allConferences.append(conference)
                 }
             }
-            allConferences.sortInPlace({ $0.updated_at.compare($1.updated_at) == NSComparisonResult.OrderedDescending })
+            allConferences.sortInPlace({ $0.updated_at.compare($1.updated_at) == ComparisonResultrderedDescending })
             
             self._finished = true
         }
