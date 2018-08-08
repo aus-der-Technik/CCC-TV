@@ -26,7 +26,7 @@ class ConferencesExport: NSObject, ConferencesExportProtocol {
                 ("title", conference.title)
                 , ("acronym", conference.acronym)
                 , ("logo_url", conference.logo_url.absoluteString)
-                , ("updated_at", NSDateFormatter.localizedStringFromDate(conference.updated_at, dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
+                , ("updated_at", DateFormatter.localizedStringFromDate(conference.updated_at as Date, dateStyle: .mediumStyle, timeStyle: .mediumStyle) )
                 , ("aspect_ratio", conference.aspect_ratio)
                 , ("schedule_url", conference.schedule_url.absoluteString)
                 , ("images_url", conference.images_url.absoluteString)
@@ -56,9 +56,9 @@ class ConferencesExport: NSObject, ConferencesExportProtocol {
                     , ("url", event.url.absoluteString)
                     , ("link", (event.link?.absoluteString) ?? "")
                     , ("frontend_link", (event.frontend_link?.absoluteString) ?? "")
-                    , ("date", NSDateFormatter.localizedStringFromDate(event.date ?? NSDate(), dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
-                    , ("release_date", NSDateFormatter.localizedStringFromDate(event.release_date ?? NSDate(), dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
-                    , ("updated_at", NSDateFormatter.localizedStringFromDate(event.updated_at!, dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
+                    , ("date", DateFormatter.localizedStringFromDate(event.date ?? NSDate(), dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
+                    , ("release_date", DateFormatter.localizedStringFromDate(event.release_date ?? NSDate(), dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
+                    , ("updated_at", DateFormatter.localizedStringFromDate(event.updated_at!, dateStyle: .MediumStyle, timeStyle: .MediumStyle) )
                     , ("poster_url", (event.poster_url?.absoluteString) ?? "")
                     , ("thumb_url", (event.thumb_url?.absoluteString) ?? "")
                     , ("conference_url", (event.conference_url?.absoluteString) ?? "")
@@ -77,19 +77,19 @@ class ConferencesExport: NSObject, ConferencesExportProtocol {
             downloader.performDownload(){
                 globalJsContext?.evaluateScript("updateUI();")
                 let conferences = self.conferenceStructToObject()
-                fn.callWithArguments(conferences)
+                fn.call(withArguments: conferences)
             }
             return Array(arrayLiteral: Dictionary())
         }
     }
     
-    func eventsOfConference(id: NSString, fn: JSValue){
+    func eventsOfConference(url id: NSString, fn: JSValue){
         if(allEvents.count > 0){
             print("# events from the cahce")
             let events = self.eventStructToObject(withEventId: Int(id as String)!)
             
             NSLog("events length \(events.count)");
-            fn.callWithArguments(events)
+            fn.call(withArguments: events)
 
         } else {
             let eventsDownloader = DownloadEventsOperation(eventId: Int(id as String)!)
